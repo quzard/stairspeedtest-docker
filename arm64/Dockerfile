@@ -13,7 +13,7 @@ RUN wget https://github.com/tindy2013/stairspeedtest-reborn/releases/download/v0
     wget https://github.com/tindy2013/stairspeedtest-reborn/releases/download/v0.7.1/stairspeedtest_reborn_arm64.tar.gz -O 071.tar.gz && \
     mkdir -p 071 && mkdir -p 070 && \
     tar xf 070.tar.gz -C 070 && tar xf 071.tar.gz -C 071 && \
-    wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-reborn/master/docker/webgui.sh -O 070/stairspeedtest/webgui.sh && \
+    wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O 070/stairspeedtest/webgui.sh && \
     mv 070/stairspeedtest/* . && mv -f 071/stairspeedtest/stairspeedtest . && \
     rm -rf 070 071 070.tar.gz 071.tar.gz && \
     mv tools/gui/gui.html tools/gui/index.html && \
