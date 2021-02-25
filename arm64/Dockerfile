@@ -1,4 +1,6 @@
-FROM ubuntu:bionic
+FROM multiarch/qemu-user-static:x86_64-aarch64 as qemu
+FROM arm64v8/ubuntu
+COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
 LABEL Auther="tindy2013" \
       Source="https://github.com/tindy2013/stairspeedtest-reborn" \
       Builder="We1eVen"
