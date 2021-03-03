@@ -13,7 +13,7 @@ docker run -d \
 -p 65430:65430 \
 weleven11/stairspeedtest-reborn
 ```
-访问 http://ip:65430
+访问 http://宿主机ip:65430
 
 可选环境变量
 ---------
@@ -50,3 +50,5 @@ docker run -d \
 weleven11/stairspeedtest-reborn
 ```
 其中，"/path/to/pref.ini"替换为你自己的配置文件路径
+
+######注意：若同时修改环境变量与配置文件中的线程数，则使用配置文件中指定的线程数
