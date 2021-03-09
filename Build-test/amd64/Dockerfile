@@ -7,7 +7,7 @@ RUN apk add bash git && \
 
 FROM multiarch/alpine:amd64-latest-stable
 WORKDIR /speedtest
-COPY --from=builder /build/stairspeedtest-reborn/stairspeedtest/* .
+COPY --from=builder /build/stairspeedtest-reborn/stairspeedtest .
 RUN apk add bash tzdata wget && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O webgui.sh && \
