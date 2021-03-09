@@ -5,12 +5,12 @@ RUN apk update && apk add bash git && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
     cd stairspeedtest-reborn && \
     bash scripts/build.alpine.release.sh && \
-    wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O webgui.sh
+    wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O stairspeedtest/webgui.sh
 
-FROM multiarch/alpine:amd64-latest-stable
+FROM alpine:latest
 WORKDIR /speedtest
 COPY --from=builder /build/stairspeedtest-reborn/stairspeedtest .
-RUN apk update && apk add bash tzdata && \
+RUN apk add bash tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo Asia/Shanghai > /etc/timezone && \
     chmod -R +x *
