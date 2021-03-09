@@ -15,7 +15,7 @@ LABEL Auther="tindy2013" \
       Source="https://github.com/tindy2013/stairspeedtest-reborn" \
       Builder="We1eVen"
 WORKDIR /speedtest
-COPY --from=tools /compose .
+COPY --from=tools /compose ./
 RUN apk add tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo Asia/Shanghai > /etc/timezone && \
