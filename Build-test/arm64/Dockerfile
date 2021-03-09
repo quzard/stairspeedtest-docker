@@ -1,5 +1,5 @@
 FROM multiarch/qemu-user-static:x86_64-aarch64 as qemu
-FROM bxhdocker/alpine-gcc as builder
+FROM bxhdocker/alpine-gcc:edge as builder
 WORKDIR /build
 COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
 RUN apk update && apk add bash git wget && \
