@@ -3,7 +3,8 @@ WORKDIR /build
 RUN apk add bash git && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
     cd /build/stairspeedtest-reborn && \
-    bash scripts/build.alpine.release.sh
+    chmod -R +x * && \
+    ./scripts/build.alpine.release.sh
 
 FROM multiarch/alpine:amd64-latest-stable
 WORKDIR /speedtest
