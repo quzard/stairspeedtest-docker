@@ -25,4 +25,4 @@ ENV MAXFORKS=1
 ENV THREAD=4
 VOLUME ["/speedtest/results"]
 EXPOSE 65430
-ENTRYPOINT [ "./webgui.sh"]
+ENTRYPOINT ["bash","webgui.sh"]
