@@ -16,7 +16,7 @@ LABEL Auther="tindy2013" \
       Builder="We1eVen"
 WORKDIR /speedtest
 COPY --from=tools /compose ./
-RUN apk add tzdata && \
+RUN apk add tzdata bash && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo Asia/Shanghai > /etc/timezone && \
     chmod -R +x *
