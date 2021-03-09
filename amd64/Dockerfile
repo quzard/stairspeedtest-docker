@@ -1,7 +1,8 @@
-FROM multiarch/alpine:amd64-latest-stable as tools
+FROM ubuntu:bionic as tools
+RUN apt-get update && \
+    apt-get --no-install-recommends install wget ca-certificates
 WORKDIR /compose
-RUN apk update && apk add wget -y && \
-    wget https://github.com/tindy2013/stairspeedtest-reborn/releases/download/v0.7.0/stairspeedtest_reborn_linux64.tar.gz -O 070.tar.gz && \
+RUN wget https://github.com/tindy2013/stairspeedtest-reborn/releases/download/v0.7.0/stairspeedtest_reborn_linux64.tar.gz -O 070.tar.gz && \
     wget https://github.com/tindy2013/stairspeedtest-reborn/releases/download/v0.7.1/stairspeedtest_reborn_linux64.tar.gz -O 071.tar.gz && \
     mkdir -p 071 && mkdir -p 070 && \
     tar xf 070.tar.gz -C 070 && tar xf 071.tar.gz -C 071 && \
