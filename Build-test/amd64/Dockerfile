@@ -10,6 +10,7 @@ WORKDIR /speedtest
 COPY --from=builder /build/stairspeedtest-reborn/stairspeedtest .
 RUN apk update && apk add tzdata wget && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo Asia/Shanghai > /etc/timezone && \
     wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O webgui.sh && \
     chmod -R +x *
 ENV PORT=65430
