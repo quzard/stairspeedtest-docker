@@ -10,7 +10,7 @@ RUN apk update && apk add bash git && \
 FROM multiarch/alpine:amd64-latest-stable
 WORKDIR /speedtest
 COPY --from=builder /build/stairspeedtest-reborn/stairspeedtest .
-RUN apk update && apk add tzdata && \
+RUN apk update && apk add bash tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo Asia/Shanghai > /etc/timezone && \
     chmod -R +x *
