@@ -39,7 +39,7 @@ docker run -d \
 -v /path/to/results:/speedtest/results \
 weleven11/stairspeedtest-reborn
 ```
-其中，"/path/to/results"替换为你自己的目录
+其中，`/path/to/results`替换为你自己的目录
 
 自定义配置文件
 ---------
@@ -49,6 +49,6 @@ docker run -d \
 -v /path/to/pref.ini:/speedtest/pref.ini \
 weleven11/stairspeedtest-reborn
 ```
-其中，"/path/to/pref.ini"替换为你自己的配置文件路径
+其中，`/path/to/pref.ini`替换为你自己的配置文件路径
 
 *注意：若同时修改环境变量与配置文件中的线程数，则使用配置文件中指定的线程数。若修改二者其中之一，则使用修改值。*
