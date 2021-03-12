@@ -11,7 +11,7 @@ RUN apk update && apk add bash git wget && \
 
 FROM arm64v8/alpine
 WORKDIR /speedtest
-COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
+#COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
 COPY --from=builder /build/stairspeedtest-reborn/stairspeedtest .
 RUN apk add bash tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
@@ -22,4 +22,4 @@ ENV MAXFORKS=1
 ENV THREAD=4
 VOLUME ["/speedtest/results"]
 EXPOSE 65430
-ENTRYPOINT ["bash","webgui.sh"]
+ENTRYPOINT ["./webgui.sh"]
