@@ -16,7 +16,7 @@ LABEL Auther="tindy2013" \
       Source="https://github.com/tindy2013/stairspeedtest-reborn" \
       Builder="We1eVen"
 WORKDIR /speedtest
-COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
+#COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
 COPY --from=tools /compose .
 RUN apk add tzdata bash && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
