@@ -1,8 +1,8 @@
 FROM multiarch/qemu-user-static:x86_64-aarch64 as qemu
-FROM bxhdocker/alpine-gcc:edge as builder
+FROM multiarch/alpine:aarch64-latest-stable as builder
 WORKDIR /build
 COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
-RUN apk update && apk add bash git wget && \
+RUN apk add bash git && \
     export ARCH=aarch64 && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
     cd stairspeedtest-reborn && \
