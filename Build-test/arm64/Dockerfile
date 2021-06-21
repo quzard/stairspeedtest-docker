@@ -3,7 +3,6 @@ FROM multiarch/alpine:aarch64-latest-stable as builder
 WORKDIR /build
 COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
 RUN apk add bash git && \
-    export ARCH=aarch64 && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
     cd stairspeedtest-reborn && \
     bash scripts/build.alpine.release.sh && \
