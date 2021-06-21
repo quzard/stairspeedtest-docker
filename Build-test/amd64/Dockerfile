@@ -1,4 +1,4 @@
-FROM alpine/openssl as builder
+FROM multiarch/alpine:amd64-latest-stable as builder
 WORKDIR /build
 RUN apk update && apk add bash git && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
