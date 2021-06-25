@@ -1,6 +1,6 @@
 FROM multiarch/alpine:amd64-latest-stable as builder
 WORKDIR /build
-RUN apk add bash git && \
+RUN apk add bash git wget && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
     cd stairspeedtest-reborn && \
     bash scripts/build.alpine.release.sh && \
