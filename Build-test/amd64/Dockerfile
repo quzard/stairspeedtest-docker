@@ -1,6 +1,7 @@
 FROM alpine/openssl as builder
 WORKDIR /build
 RUN apk add bash git wget && \
+    export ARCH=x86_64 && \
     git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
     cd stairspeedtest-reborn && \
     bash scripts/build.alpine.release.sh && \
