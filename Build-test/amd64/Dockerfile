@@ -1,4 +1,4 @@
-FROM alpine/openssl as builder
+FROM multiarch/alpine:amd64-latest-stable as builder
 WORKDIR /build
 RUN apk add bash git wget && \
     export ARCH=x86_64 && \
