@@ -5,14 +5,14 @@
 # stairspeedtest-reborn
 <img src="https://img.shields.io/github/license/We1eVen/stairspeedtest-docker.svg"/>  <img src="https://img.shields.io/github/last-commit/We1eVen/stairspeedtest-docker.svg"/>  <img src="https://img.shields.io/docker/image-size/weleven11/stairspeedtest-reborn/latest"/>  
 
-#### dockerhub：https://hub.docker.com/r/weleven11/stairspeedtest-reborn
+#### dockerhub：https://hub.docker.com/r/quzard/stairspeedtest
 
 ## 使用方法
 
 ```
 docker run -d \
 -p 65430:65430 \
-weleven11/stairspeedtest-reborn
+quzard/stairspeedtest:amd64
 ```
 访问 http://ip:65430
 
@@ -31,7 +31,7 @@ docker run -d \
 -e PORT=8080 \
 -e MAXFORKS=2 \
 -e THREAD=1 \
-weleven11/stairspeedtest-reborn
+quzard/stairspeedtest:amd64
 ```
 
 ## 映射结果目录
@@ -40,7 +40,7 @@ weleven11/stairspeedtest-reborn
 docker run -d \
 -p 65430:65430 \
 -v /path/to/results:/speedtest/results \
-weleven11/stairspeedtest-reborn
+quzard/stairspeedtest:amd64
 ```
 其中，`/path/to/results`替换为你自己的目录
 
@@ -50,7 +50,7 @@ weleven11/stairspeedtest-reborn
 docker run -d \
 -p 65430:65430 \
 -v /path/to/pref.ini:/speedtest/pref.ini \
-weleven11/stairspeedtest-reborn
+quzard/stairspeedtest:amd64
 ```
 其中，`/path/to/pref.ini`替换为你自己的配置文件路径
 
