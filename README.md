@@ -48,8 +48,12 @@ quzard/stairspeedtest:amd64
 
 ```
 docker run -d \
+--name speed \
+-e MAXFORKS=1 \
+-e THREAD=4 \
 -p 65430:65430 \
--v /path/to/pref.ini:/speedtest/pref.ini \
+-v /home/ubuntu/stairspeedtest/results:/speedtest/results \
+-v /home/ubuntu/stairspeedtest/pref.ini:/speedtest/pref.ini \
 quzard/stairspeedtest:amd64
 ```
 其中，`/path/to/pref.ini`替换为你自己的配置文件路径
