@@ -14,23 +14,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Log into registry
-        run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
       - name: Build and Push image
         run: |
-          bash build_amd64.sh 
-
+          echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
+          cd Build-test/amd64
+          sudo docker build -t='quzard/stairspeedtest:amd64' .
+          sudo docker push quzard/stairspeedtest:amd64
   push_arm64:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Log into registry
-        run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
       - name: Build and Push image
         uses: uraimo/run-on-arch-action@v2.1.1
         with:
           arch: aarch64
           distro: ubuntu20.04
           run: |
-            bash build_arm64.sh 
+            echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
+            cd Build-test/arm64
+            sudo docker build -t='quzard/stairspeedtest:arm64' .
+            sudo docker push quzard/stairspeedtest:arm64
