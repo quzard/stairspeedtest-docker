@@ -12,7 +12,8 @@ jobs:
   push_amd64:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Log into registry
         run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
       - name: Build and Push image
@@ -22,7 +23,8 @@ jobs:
   push_arm64:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+       - name: Checkout code
+        uses: actions/checkout@v2
       - name: Log into registry
         run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
       - name: Build and Push image
