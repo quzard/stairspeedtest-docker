@@ -36,6 +36,7 @@ jobs:
           file: ./Build-test/amd64/Dockerfile
           # 所需要的体系结构，可以在 Available platforms 步骤中获取所有的可用架构
           platforms: linux/amd64,linux/arm64
+          push: true
           # 给清单打上多个标签
           tags: |
             quzard/stairspeedtest:latest
