@@ -32,5 +32,5 @@ jobs:
         with:
           arch: aarch64
           distro: ubuntu20.04
-        run: |
-          bash build_arm64.sh 
+          run: |
+            bash build_arm64.sh 
