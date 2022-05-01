@@ -1,12 +1,12 @@
 version: "3"
 
 services:
-  stairspeedtest-docker:
-    image: quzard/stairspeedtest:amd64
-    container_name: stairspeedtest-docker
+  stairspeedtest:
+    image: quzard/stairspeedtest:latest
+    container_name: stairspeedtest
     restart: always
     ports:
-        - "127.0.0.1:65430:65430" #将宿主机8087端口映射到docker的80端口
+        - "65430:65430" #将宿主机8087端口映射到docker的80端口
     volumes:
       - ./results:/speedtest/results
   utility.watchtower:
