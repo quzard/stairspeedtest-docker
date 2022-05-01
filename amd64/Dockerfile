@@ -5,7 +5,7 @@ RUN apk update && apk add wget && \
     wget https://github.com/tindy2013/stairspeedtest-reborn/releases/download/v0.7.1/stairspeedtest_reborn_linux64.tar.gz -O 071.tar.gz && \
     mkdir -p 071 && mkdir -p 070 && \
     tar xf 070.tar.gz -C 070 && tar xf 071.tar.gz -C 071 && \
-    wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O 070/stairspeedtest/webgui.sh && \
+    wget https://raw.githubusercontent.com/quzard/stairspeedtest-docker/master/webgui.sh -O 070/stairspeedtest/webgui.sh && \
     mv 070/stairspeedtest/* . && mv -f 071/stairspeedtest/stairspeedtest . && \
     rm -rf 070 071 070.tar.gz 071.tar.gz && \
     mv tools/gui/gui.html tools/gui/index.html
@@ -13,7 +13,7 @@ RUN apk update && apk add wget && \
 FROM multiarch/alpine:amd64-latest-stable
 LABEL Auther="tindy2013" \
       Source="https://github.com/tindy2013/stairspeedtest-reborn" \
-      Builder="We1eVen"
+      Builder="quzard"
 WORKDIR /speedtest
 COPY --from=tools /compose .
 RUN apk add tzdata bash && \

@@ -7,7 +7,7 @@ RUN apk add bash git && \
     cd stairspeedtest-reborn && \
     wget https://raw.githubusercontent.com/quzard/stairspeedtest-docker/master/pref.ini -O base/pref.ini && \
     bash scripts/build.alpine.release.sh && \
-    wget https://raw.githubusercontent.com/We1eVen/stairspeedtest-docker/main/webgui.sh -O stairspeedtest/webgui.sh
+    wget https://raw.githubusercontent.com/quzard/stairspeedtest-docker/master/webgui.sh -O stairspeedtest/webgui.sh
 
 FROM arm64v8/alpine
 WORKDIR /speedtest
