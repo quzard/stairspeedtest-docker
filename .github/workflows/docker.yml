@@ -23,7 +23,7 @@ jobs:
   push_arm64:
     runs-on: ubuntu-latest
     steps:
-       - name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
       - name: Log into registry
         run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u quzard --password-stdin
