@@ -2,7 +2,7 @@ FROM multiarch/alpine:amd64-latest-stable as builder
 WORKDIR /build
 RUN apk add bash git wget && \
     export ARCH=x86_64 && \
-    git clone https://github.com/tindy2013/stairspeedtest-reborn.git && \
+    git clone https://github.com/quzard/stairspeedtest-reborn.git && \
     cd stairspeedtest-reborn && \
     wget https://raw.githubusercontent.com/quzard/stairspeedtest-docker/master/pref.ini -O base/pref.ini && \
     bash scripts/build.alpine.release.sh && \
