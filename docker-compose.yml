@@ -10,3 +10,4 @@ services:
     volumes:
       - ./results:/speedtest/results
       - ./logs:/speedtest/logs
+      - ./pref.ini:/speedtest/pref.ini
