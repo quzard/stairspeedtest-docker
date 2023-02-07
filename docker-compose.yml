@@ -10,12 +10,4 @@ services:
     volumes:
       - ./results:/speedtest/results
       - ./logs:/speedtest/logs
-  utility.watchtower:
-    container_name: watchtower_stairspeedtest
-    image: containrrr/watchtower:latest
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_POLL_INTERVAL=86400
-    restart: always
+      - ./pref.ini:/speedtest/pref.ini
